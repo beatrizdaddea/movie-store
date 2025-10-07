@@ -1,10 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Toaster } from "react-hot-toast";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
 
-import HomePage from './Pages/Homepage'
-import CheckoutPage from './Pages/Checkout'
+import HomePage from "./pages/HomePage";
+import CheckoutPage from "./pages/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -15,10 +16,15 @@ const router = createBrowserRouter([
     path: "/checkout",
     element: <CheckoutPage />,
   },
-])
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+      toastOptions={{ duration: 1500 }}
+    />
+  </React.StrictMode>
+);
