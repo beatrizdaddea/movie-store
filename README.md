@@ -120,7 +120,7 @@ A aplicação foi desenvolvida com foco em mobile-first, garantindo uma experiê
 Desenvolvedora de Software
 
 📧 **Email:** beatrizchit@gmail.com  
-🔗 **LinkedIn:** [Beatriz Chieffi](https://linkedin.com/in/beatriz-chieffi)  
-🔗 **GitHub:** [beatrizchit](https://github.com/beatrizchit)
+🔗 **LinkedIn:** [Beatriz Chieffi](www.linkedin.com/in/beatriz-daddea)  
+🔗 **GitHub:** [beatrizchit]([https://github.com/beatrizchit](https://github.com/beatrizdaddea))
 
 ---
