@@ -121,6 +121,6 @@ Desenvolvedora de Software
 
 📧 **Email:** beatrizchit@gmail.com  
 🔗 **LinkedIn:** [Beatriz Chieffi](www.linkedin.com/in/beatriz-daddea)  
-🔗 **GitHub:** [beatrizchit]([https://github.com/beatrizchit](https://github.com/beatrizdaddea))
+🔗 **GitHub:** [Beatriz Daddea]([www.linkedin.com/in/beatriz-daddea](https://github.com/beatrizdaddea))
 
 ---
