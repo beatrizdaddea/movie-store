@@ -27,11 +27,9 @@ export default function Header({
 
   const navigate = useNavigate();
 
-  // Use os dados passados por prop ou os locais
   const cart = propCart || localCart;
   const favorites = propFavorites || localFavorites;
 
-  // Funções para gerenciar o carrinho
   const handleRemoveFromCart = (id) => {
     if (onRemoveFromCart) {
       onRemoveFromCart(id);
@@ -48,16 +46,14 @@ export default function Header({
     }
   };
 
-  // Funções para gerenciar favoritos
   const handleAddToFavorites = (movie) => {
     const fav = {
       id: movie.id,
-      // normalize both title/name to support different callers
       title: movie.title || movie.name,
       name: movie.name || movie.title,
       image: movie.image || tmdbService.getImageUrl(movie.poster_path, "w200"),
       rating: movie.vote_average || movie.rating,
-      price: movie.price, // preserve price if caller provided
+      price: movie.price,
       releaseDate: movie.release_date || movie.releaseDate,
     };
 
@@ -102,12 +98,10 @@ export default function Header({
     setIsSearchOpen(false);
   };
 
-  // Calcular total do carrinho
   const cartTotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
   const cartCount = cart.reduce((total, item) => total + item.qty, 0);
   const favoritesCount = favorites.length;
 
-  // Buscar filmes na API
   const searchMovies = async (query) => {
     if (!query.trim()) {
       setSearchResults([]);
@@ -130,7 +124,6 @@ export default function Header({
     }
   };
 
-  // Debounce para a pesquisa
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (searchQuery.length > 2) {
@@ -159,7 +152,7 @@ export default function Header({
     const movieItem = {
       id: movie.id,
       name: movie.title,
-      price: 9.99, // Preço padrão
+      price: 9.99,
       qty: 1,
       image: tmdbService.getImageUrl(movie.poster_path, "w200"),
       rating: movie.vote_average,
@@ -182,18 +175,15 @@ export default function Header({
       });
     }
 
-    // Mostrar feedback visual (opcional)
     setIsCartOpen(true);
     clearSearch();
   };
 
-  // Add a favorite item (already stored) to cart preserving its data
   const handleAddFavoriteToCart = (fav) => {
     if (!fav) return;
 
     const cartItem = {
       id: fav.id,
-      // prefer explicit fields
       name: fav.name || fav.title || fav.title || "Filme",
       price: fav.price ?? 9.99,
       qty: 1,
@@ -218,7 +208,6 @@ export default function Header({
       });
     }
 
-    // open cart so user sees the change
     setIsCartOpen(true);
   };
 
@@ -241,7 +230,6 @@ export default function Header({
     navigate("/checkout");
   };
 
-  // Fechar dropdown ao clicar fora
   useEffect(() => {
     const handleClickOutside = () => {
       setIsSearchOpen(false);
